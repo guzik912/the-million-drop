@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Win a milion</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="welcome-board">
+    <div class="welcome-content">
+      <h1 class="heading-primary">Welcome in "The Million Drop" game!</h1>
+      <div class="rules">
+        <h2 class="heading-secondary">Before we started game, look for game rules:</h2>
+        <ul class="rules-list">
+          <li class="rules-item">1. Before every question u will choose your question category</li>
+          <li class="rules-item">2. For every question you have to bid your all money</li>
+          <li class="rules-item">3. Just 1 answer is the correct</li>
+          <li class="rules-item">4. All game include 10 questions</li>
+          <li class="rules-item">5. After all of those questions u will take your winning money</li>
+        </ul>
+      </div>
+      <div class="player-info">
+        <h3 class="heading-tertiary">Tell for us your name and we can start a game</h3>
+        <input type="text" class="player-name" name="player-name" placeholder="Your name">
+        <button class="start-game-btn">Let's go!</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-category">
+    <h2 class="question-category-heading">Choose your question category</h2>
+    <div class="question-category-content">
+      <div class="question-category-1">History</div>
+      <div class="question-category-2">Movies</div>
+    </div>
+  </div>
+
+  <div class="question-board">
+    <div class="question-content">
+      <p class="question-description">This is question number 1</p>
+    </div>
+  </div>
+
+  <div class="bid-board">
+    <div class="bid-bgc"></div>
+    <div class="bid-content">
+      <div class="bid-1">
+        <div class="question-answer-a">Answer 1</div>
+        <div class="bid-value">
+          <input type="number" class="bid-value-1" />
+        </div>
+      </div>
+      <div class="bid-2">
+        <div class="question-answer-b">B</div class="question-answer">
+        <div class="bid-value">
+          <input type="number" class="bid-value-2" />
+        </div>
+      </div>
+      <div class="bid-3">
+        <div class="question-answer-c">C</div class="question-answer">
+        <div class="bid-value">
+          <input type="number" class="bid-value-3" />
+        </div>
+      </div>
+      <div class="bid-4">
+        <div class="question-answer-d">D</div class="question-answer">
+        <div class="bid-value">
+          <input type="number" class="bid-value-4" />
+        </div>
+      </div>
+    </div>
+    <div class="money">1.000.000$</div>
+    <button class="btn-confirm-bid">Confirm</button>
+  </div>
+
+  <div class="result">
+    <div class="result-1">
+      <p>Q1</p>
+      <span class="result-icon result-icon-good"><i class="fa fa-check" aria-hidden="true"></i></span>
+      <h4 class="result-money">+400.000$</h4>
+    </div>
+    <div class="result-2">
+      <p>Q2</p>
+      <span class="result-icon result-icon-wrong"><i class="fa fa-times" aria-hidden="true"></i></span>
+      <h4 class="result-money">-200.000$</h4>
+    </div>
+    <div class="result-3">
+      <p>Q3</p>
+      <span class="result-icon result-icon-good"><i class="fa fa-check" aria-hidden="true"></i></span>
+      <h4 class="result-money">+75.000$</h4>
+    </div>
+  </div>
+</body>
+
+
+<script src="js/main.js"></script>
+
+</html>
