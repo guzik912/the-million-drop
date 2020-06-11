@@ -95,7 +95,7 @@ body {
 
 /* Questions category */
 
-.question-category {
+.question-category-modal {
   display: none;
   position: absolute;
   top: 50%;
@@ -146,7 +146,7 @@ body {
 
 .question-board {
   width: 80%;
-  height: 30vh;
+  height: 25vh;
   margin: 0 auto;
   border-radius: 200px;
   background: var(--secondary-bg-color);
@@ -168,10 +168,10 @@ body {
   border-radius: 200px;
 }
 
-.question-answer-a,
-.question-answer-b,
-.question-answer-c,
-.question-answer-d {
+.question-answer-1,
+.question-answer-2,
+.question-answer-3,
+.question-answer-4 {
   width: 80%;
   height: 50%;
   margin: 0 auto;
@@ -189,7 +189,8 @@ body {
 
 .bid-board {
   position: relative;
-  margin-top: 5rem;
+  margin: 5rem auto 0;
+  width: 80%;
   height: 50vh;
   border-radius: 30%;
 }
@@ -274,31 +275,34 @@ body {
 
 .result {
   display: flex;
-  /* margin-top: 10rem; */
+  justify-content: center;
+  margin-top: 2rem;
   text-align: center;
 }
 
 .result div {
-  width: 10%;
+  margin: 0 2rem;
   padding: 1rem;
+}
+
+.result h3 {
+  font-size: 2rem;
 }
 
 .result-icon {
   display: inline-block;
-  margin: 1rem 0;
+  margin: .5rem 0;
   width: 2rem;
   height: 2rem;
-  font-size: 1.8rem;
-  /* background: var(--secondary-bg-color); */
-  /* background: rgb(211, 211, 211); */
+  font-size: 2rem;
 }
 
 .result-icon-wrong {
-  color: red;
+  /* color: red; */
 }
 
 .result-icon-good {
-  color: green;
+  color: rgb(119, 118, 118);
 }
 
 .result-money {

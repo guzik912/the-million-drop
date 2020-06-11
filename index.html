@@ -32,11 +32,11 @@
     </div>
   </div>
 
-  <div class="question-category">
+  <div class="question-category-modal">
     <h2 class="question-category-heading">Choose your question category</h2>
     <div class="question-category-content">
-      <div class="question-category-1">History</div>
-      <div class="question-category-2">Movies</div>
+      <button class="question-category-1">History</button>
+      <button class="question-category-2">Movies</button>
     </div>
   </div>
 
@@ -50,28 +50,28 @@
     <div class="bid-bgc"></div>
     <div class="bid-content">
       <div class="bid-1">
-        <div class="question-answer-a">Answer 1</div>
+        <div class="question-answer-1">Answer 1</div>
         <div class="bid-value">
           <input type="number" class="bid-value-1" min="25000" max="maxMoneyValue" step="25000"
             onKeyDown="return false" />
         </div>
       </div>
       <div class="bid-2">
-        <div class="question-answer-b">B</div class="question-answer">
+        <div class="question-answer-2">B</div class="question-answer">
         <div class="bid-value">
           <input type="number" class="bid-value-2" min="25000" max="maxMoneyValue" step="25000"
             onKeyDown="return false" />
         </div>
       </div>
       <div class="bid-3">
-        <div class="question-answer-c">C</div class="question-answer">
+        <div class="question-answer-3">C</div class="question-answer">
         <div class="bid-value">
           <input type="number" class="bid-value-3" min="25000" max="maxMoneyValue" step="25000"
             onKeyDown="return false" />
         </div>
       </div>
       <div class="bid-4">
-        <div class="question-answer-d">D</div class="question-answer">
+        <div class="question-answer-4">D</div class="question-answer">
         <div class="bid-value">
           <input type="number" class="bid-value-4" min="25000" max="maxMoneyValue" step="25000"
             onKeyDown="return false" />
@@ -82,28 +82,67 @@
     <button class="btn-confirm-bid">Confirm</button>
   </div>
 
+
+  <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
   <div class="result">
     <div class="result-1">
-      <p>Q1</p>
+      <h3>Q1</h3>
       <span class="result-icon result-icon-good"><i class="fa fa-check" aria-hidden="true"></i></span>
-      <h4 class="result-money">+400.000$</h4>
+      <p class="result-money">- 400.000$</p>
     </div>
     <div class="result-2">
-      <p>Q2</p>
-      <span class="result-icon result-icon-wrong"><i class="fa fa-times" aria-hidden="true"></i></span>
-      <h4 class="result-money">-200.000$</h4>
+      <h3>Q2</h3>
+      <span class="result-icon result-icon-wrong">?</span>
+      <p class="result-money"></p>
     </div>
     <div class="result-3">
-      <p>Q3</p>
-      <span class="result-icon result-icon-good"><i class="fa fa-check" aria-hidden="true"></i></span>
-      <h4 class="result-money">+75.000$</h4>
+      <h3>Q3</h3>
+      <span class="result-icon result-icon-good">?</span>
+      <p class="result-money"></p>
+    </div>
+    <div class="result-4">
+      <h3>Q4</h3>
+      <span class="result-icon result-icon-good">?</span>
+      <p class="result-money"></p>
+    </div>
+    <div class="result-5">
+      <h3>Q5</h3>
+      <span class="result-icon result-icon-good">?</span>
+      <p class="result-money"></p>
+    </div>
+    <div class="result-6">
+      <h3>Q6</h3>
+      <span class="result-icon result-icon-good">?</span>
+      <p class="result-money"></p>
+    </div>
+    <div class="result-7">
+      <h3>Q7</h3>
+      <span class="result-icon result-icon-good">?</span>
+      <p class="result-money"></p>
+    </div>
+    <div class="result-8">
+      <h3>Q8</h3>
+      <span class="result-icon result-icon-good">?</span>
+      <p class="result-money"></p>
+    </div>
+    <div class="result-9">
+      <h3>Q9</h3>
+      <span class="result-icon result-icon-good">?</span>
+      <p class="result-money"></p>
+    </div>
+    <div class="result-10">
+      <h3>Q10</h3>
+      <span class="result-icon result-icon-good">?</span>
+      <p class="result-money"></p>
     </div>
   </div>
 </body>
 
 
+<script src="js/base.js"></script>
 <script src="js/models/questions.js"></script>
-<script src="js/models/bid.js"></script>
+<script src="js/models/bids.js"></script>
+<script src="js/views/results.js"></script>
 <script src="js/main.js"></script>
 
 </html>

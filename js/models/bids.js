@@ -1,4 +1,4 @@
-class Bid {
+class Bids {
   constructor() {
     this.allMoney = 1000000;
     this.wonBid = 0;
@@ -34,7 +34,7 @@ class Bid {
   }
 }
 
-const bid = new Bid();
+const bid = new Bids();
 
 const inputs = [...document.querySelectorAll('.bid-value input')];
 const allMoney = document.querySelector('.money');
