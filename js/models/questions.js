@@ -4,6 +4,7 @@ class Questions {
     this.activeCategory = '',
     this.activeQuestion = {},
     this.activeQuestionAnswers = [],
+    this.activeCorrectAnswer = '',
     this.removedQuestions = [],
     this.successedQuestions = [],
     this.failedQuestions = []
@@ -27,20 +28,15 @@ class Questions {
     this.removeQuestion();
   }
 
-  // getAnswers() {
-  //   this.activeQuestion.
-  //   this.activeQuestionAnswers = this.activeQuestion.incorrect_answers.map(answer => {
-  //     return [{
-    
-  //     }]
-  //   });
-  //   this.activeQuestionAnswers =   
-  // }
+  getAnswers() {
+    this.activeQuestionAnswers = [...this.activeQuestion.incorrect_answers, this.activeQuestion.correct_answer];
+    this.activeCorrectAnswer = this.activeQuestion.correct_answer;
+  }
 
   removeQuestion(){
-    const index = this.allQuestions.findIndex(question => question.question === this.activeQuestion.question);
+    const questionIndexToDelete = this.allQuestions.findIndex(question => question.question === this.activeQuestion.question);
 
-    this.allQuestions.splice(index, 1);
+    this.allQuestions.splice(questionIndexToDelete, 1);
   }
 
   calculateQuestionQue(){
@@ -48,4 +44,6 @@ class Questions {
   }
 }
 
+
+const question = new Questions()
 
