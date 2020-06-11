@@ -172,7 +172,9 @@ body {
 .question-answer-b,
 .question-answer-c,
 .question-answer-d {
+  width: 80%;
   height: 50%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;

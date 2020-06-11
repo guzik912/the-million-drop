@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Win a milion</title>
+  <title>The million drop</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
@@ -52,25 +52,29 @@
       <div class="bid-1">
         <div class="question-answer-a">Answer 1</div>
         <div class="bid-value">
-          <input type="number" class="bid-value-1" />
+          <input type="number" class="bid-value-1" min="25000" max="maxMoneyValue" step="25000"
+            onKeyDown="return false" />
         </div>
       </div>
       <div class="bid-2">
         <div class="question-answer-b">B</div class="question-answer">
         <div class="bid-value">
-          <input type="number" class="bid-value-2" />
+          <input type="number" class="bid-value-2" min="25000" max="maxMoneyValue" step="25000"
+            onKeyDown="return false" />
         </div>
       </div>
       <div class="bid-3">
         <div class="question-answer-c">C</div class="question-answer">
         <div class="bid-value">
-          <input type="number" class="bid-value-3" />
+          <input type="number" class="bid-value-3" min="25000" max="maxMoneyValue" step="25000"
+            onKeyDown="return false" />
         </div>
       </div>
       <div class="bid-4">
         <div class="question-answer-d">D</div class="question-answer">
         <div class="bid-value">
-          <input type="number" class="bid-value-4" />
+          <input type="number" class="bid-value-4" min="25000" max="maxMoneyValue" step="25000"
+            onKeyDown="return false" />
         </div>
       </div>
     </div>
@@ -99,6 +103,7 @@
 
 
 <script src="js/models/questions.js"></script>
+<script src="js/models/bid.js"></script>
 <script src="js/main.js"></script>
 
 </html>

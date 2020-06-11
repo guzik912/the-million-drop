@@ -3,6 +3,7 @@ class Questions {
     this.allQuestions = [],
     this.activeCategory = '',
     this.activeQuestion = {},
+    this.activeQuestionAnswers = [],
     this.removedQuestions = [],
     this.successedQuestions = [],
     this.failedQuestions = []
@@ -25,6 +26,16 @@ class Questions {
     this.removedQuestions.push(this.activeQuestion);
     this.removeQuestion();
   }
+
+  // getAnswers() {
+  //   this.activeQuestion.
+  //   this.activeQuestionAnswers = this.activeQuestion.incorrect_answers.map(answer => {
+  //     return [{
+    
+  //     }]
+  //   });
+  //   this.activeQuestionAnswers =   
+  // }
 
   removeQuestion(){
     const index = this.allQuestions.findIndex(question => question.question === this.activeQuestion.question);
