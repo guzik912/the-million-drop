@@ -11,6 +11,19 @@
 </head>
 
 <body>
+  <div class="error-bid-message">
+    <h3>You have to bid your all available money...</h3>
+  </div>
+  <div class="turn-question-result-message">
+    <h3>Well done! Let's going next question! You still have <span class="result-message-money"></span> in game!</h3>
+  </div>
+  <div class="final-result-message">
+    <div class="final-result-message-content">
+      <h3>It's finish our game <span class="player-name-text"></span>. You won <span class="final-money"></span>$.</h3>
+      <button class="start-game-again-btn">Play again</button>
+    </div>
+  </div>
+
   <div class="welcome-board">
     <div class="welcome-content">
       <h1 class="heading-primary">Welcome in "The Million Drop" game!</h1>
@@ -35,14 +48,14 @@
   <div class="question-category-modal">
     <h2 class="question-category-heading">Choose your question category</h2>
     <div class="question-category-content">
-      <button class="question-category-1">History</button>
-      <button class="question-category-2">Movies</button>
+      <button class="question-category-1"></button>
+      <button class="question-category-2"></button>
     </div>
   </div>
 
   <div class="question-board">
     <div class="question-content">
-      <p class="question-description">This is question number 1</p>
+      <p class="question-description"></p>
     </div>
   </div>
 
@@ -50,35 +63,31 @@
     <div class="bid-bgc"></div>
     <div class="bid-content">
       <div class="bid-1">
-        <div class="question-answer-1">Answer 1</div>
+        <div class="question-answer-1"></div>
         <div class="bid-value">
-          <input type="number" class="bid-value-1" min="25000" max="maxMoneyValue" step="25000"
-            onKeyDown="return false" />
+          <input type="number" class="bid-value-1" min="0" max="maxMoneyValue" step="25000" onKeyDown="return false" />
         </div>
       </div>
       <div class="bid-2">
-        <div class="question-answer-2">B</div class="question-answer">
+        <div class="question-answer-2"></div class="question-answer">
         <div class="bid-value">
-          <input type="number" class="bid-value-2" min="25000" max="maxMoneyValue" step="25000"
-            onKeyDown="return false" />
+          <input type="number" class="bid-value-2" min="0" max="maxMoneyValue" step="25000" onKeyDown="return false" />
         </div>
       </div>
       <div class="bid-3">
-        <div class="question-answer-3">C</div class="question-answer">
+        <div class="question-answer-3"></div class="question-answer">
         <div class="bid-value">
-          <input type="number" class="bid-value-3" min="25000" max="maxMoneyValue" step="25000"
-            onKeyDown="return false" />
+          <input type="number" class="bid-value-3" min="0" max="maxMoneyValue" step="25000" onKeyDown="return false" />
         </div>
       </div>
       <div class="bid-4">
-        <div class="question-answer-4">D</div class="question-answer">
+        <div class="question-answer-4"></div class="question-answer">
         <div class="bid-value">
-          <input type="number" class="bid-value-4" min="25000" max="maxMoneyValue" step="25000"
-            onKeyDown="return false" />
+          <input type="number" class="bid-value-4" min="0" max="maxMoneyValue" step="25000" onKeyDown="return false" />
         </div>
       </div>
     </div>
-    <div class="money">1.000.000$</div>
+    <div class="money"></div>
     <button class="btn-confirm-bid">Confirm</button>
   </div>
 
@@ -87,12 +96,12 @@
   <div class="result">
     <div class="result-1">
       <h3>Q1</h3>
-      <span class="result-icon result-icon-good"><i class="fa fa-check" aria-hidden="true"></i></span>
-      <p class="result-money">- 400.000$</p>
+      <span class="result-icon result-icon-good">?</span>
+      <p class="result-money"></p>
     </div>
     <div class="result-2">
       <h3>Q2</h3>
-      <span class="result-icon result-icon-wrong">?</span>
+      <span class="result-icon result-icon-good">?</span>
       <p class="result-money"></p>
     </div>
     <div class="result-3">
@@ -142,6 +151,8 @@
 <script src="js/base.js"></script>
 <script src="js/models/questions.js"></script>
 <script src="js/models/bids.js"></script>
+<script src="js/views/questions.js"></script>
+<script src="js/views/bids.js"></script>
 <script src="js/views/results.js"></script>
 <script src="js/main.js"></script>
 

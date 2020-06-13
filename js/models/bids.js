@@ -1,13 +1,13 @@
 class Bids {
   constructor() {
-    this.allMoney = 1000000;
+    this.startMoney = 1000000;
+    this.money = 0;
     this.wonBid = 0;
     this.loseBid = 0;
     this.bidValue1 = 0;
     this.bidValue2 = 0;
     this.bidValue3 = 0;
     this.bidValue4 = 0;
-    this.bidValues = [];
     this.totalBidValues = [];
   }
 
@@ -17,30 +17,27 @@ class Bids {
     this.bidValue3 = Number(bid[2].value)
     this.bidValue4 = Number(bid[3].value)
     this.totalBidValues = [this.bidValue1, this.bidValue2, this.bidValue3, this.bidValue4]
-    this.allMoney = 1000000 - (this.totalBidValues.reduce((a,b) => a + b))
+    this.money = this.startMoney - (this.totalBidValues.reduce((a,b) => a + b))
+    let availableMaxBid = parseInt(DOMElements.money.textContent) - 25000;
+    // let availableMaxBid = this.money - (this.totalBidValues.reduce((a,b) => a + b));
+    // bid[0].setAttribute("max", this.money);
+    console.log(availableMaxBid)
   }
 
   checkBid(correctAnswer, bids) { 
     const answers = bids.map(bid => bid.parentNode.previousElementSibling.textContent);
-    const indexOfCorrectAnswer = answers.findIndex(answer => answer === correctAnswer);
 
     answers.map((answer,index) => {
       if(answer === correctAnswer) {
-        this.wonBid = this.totalBidValues[index]
+        this.wonBid = Number(this.totalBidValues[index])
+        this.startMoney = this.wonBid
       } else {
-        this.loseBid += this.totalBidValues[index]
+        this.loseBid += Number(this.totalBidValues[index])
       }
     })
   }
 }
 
-const bid = new Bids();
+const bids = new Bids();
 
-const inputs = [...document.querySelectorAll('.bid-value input')];
-const allMoney = document.querySelector('.money');
-
-inputs.forEach(input => input.addEventListener('input', (e)=> {
-  bid.setBid(inputs);
-  allMoney.textContent = bid.allMoney;
-}))
 

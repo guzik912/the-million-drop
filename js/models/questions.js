@@ -2,13 +2,10 @@ class Questions {
   constructor() {
     this.allQuestions = [],
     this.activeCategories = [],
-    // this.activeAllCategories = [],
     this.activeQuestion = {},
     this.activeQuestionAnswers = [],
     this.activeCorrectAnswer = '',
-    this.removedQuestions = [],
-    this.successedQuestions = [],
-    this.failedQuestions = []
+    this.removedQuestions = []
   }
 
   fetchQuestions(){
@@ -18,17 +15,15 @@ class Questions {
     .catch(err => console.log(err))
   }
 
-  // getAllCategories() {
-  //   this.activeAllCategories = this.allQuestions.map(question => question.category)
-  // }
-
   getCategories(){
-    for(let i = 0; i < 2; i++) {
-      let randomNumber = Math.floor(Math.random() * this.allQuestions.length)
-      this.activeCategories.push(this.allQuestions[randomNumber].category)
+    let randomNumber1 = Math.floor(Math.random() * this.allQuestions.length);
+    let randomNumber2 = Math.floor(Math.random() * this.allQuestions.length);
+    
+    if(randomNumber1 === randomNumber2 || this.allQuestions[randomNumber1].category === this.allQuestions[randomNumber2].category) {
+      this.getCategories();
+    } else {
+      this.activeCategories = [this.allQuestions[randomNumber1].category, this.allQuestions[randomNumber2].category]
     }
-    // this.activeCategory = category;
-    // this.activeCategories = 
   }
 
   getQuestion(category){
@@ -40,31 +35,16 @@ class Questions {
   }
 
   getAnswers(activeQuestion) {
-    // const answers = [...this.activeQuestion.incorrect_answers, this.activeQuestion.correct_answer];
-    const answers = [...activeQuestion.incorrect_answers, activeQuestion.correct_answer]
-
-    const shuffle = (array) => {
-      let counter = array.length;
-
-      while (counter > 0) {
-        let randomIndex = Math.floor(Math.round() * counter)
-        counter--;
-        let temp = array[counter];
-        array[counter] = array[randomIndex];
-        array[randomIndex] = temp; 
-      }
-
-      return array;
-    }
-
-    this.activeQuestionAnswers = shuffle(answers);
-    // this.activeCorrectAnswer = this.activeQuestion.correct_answer;
+    const answers = [...activeQuestion.incorrect_answers];
+    let randomNumber = Math.floor(Math.random() * answers.length + 1)
+    let tempAnswer = answers[randomNumber];
+    answers[randomNumber] = activeQuestion.correct_answer
+    answers.push(tempAnswer);
+    this.activeQuestionAnswers = answers; 
     this.activeCorrectAnswer = activeQuestion.correct_answer;
-    // this.activeQuestionAnswers = [...this.activeQuestion.incorrect_answers, this.activeQuestion.correct_answer];
-    // this.activeCorrectAnswer = this.activeQuestion.correct_answer;
   }
 
-  removeQuestion(activeQuestion){
+  removeQuestion(){
     const questionIndexToDelete = this.allQuestions.findIndex(question => question.question === question.question);
 
     this.allQuestions.splice(questionIndexToDelete, 1);
@@ -76,5 +56,5 @@ class Questions {
 }
 
 
-const question = new Questions()
-
+const questions = new Questions();
+questions.fetchQuestions();

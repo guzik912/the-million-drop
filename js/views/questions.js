@@ -1,12 +1,16 @@
-class questionsUI {
-  renderCategoryModal(categories) {
-    DOMElements.questionCategoryModal.classList.add('.categoryModalOpen')
+class QuestionsUI {
+  openCategoryModal(categories) {
+    DOMElements.questionCategoryModal.classList.add('categoryModalOpen')
     DOMElements.questionCategory1.textContent = categories[0]; 
     DOMElements.questionCategory2.textContent = categories[1]; 
   }
 
   closeCategoryModal() {
-    DOMElements.questionCategoryModal.classList.remove('.categoryModalOpen');
+    DOMElements.questionCategoryModal.classList.remove('categoryModalOpen');
+  }
+
+  closeWelcomeBoard() {
+    DOMElements.welcomeBoard.classList.add('hide')
   }
 
   renderQuestion(activeQuestion, answers) {
@@ -25,3 +29,5 @@ class questionsUI {
     DOMElements.questionAnswer4.textContent = '';
   }
 }
+
+const questionsUI = new QuestionsUI();
