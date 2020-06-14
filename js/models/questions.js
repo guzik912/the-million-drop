@@ -30,6 +30,19 @@ class Questions {
     this.activeQuestion = this.allQuestions.find(question => question.category === category);
     this.removedQuestions.push(this.activeQuestion);
 
+    let fixedQuestion = '';
+
+    if(this.activeQuestion.question.includes('&amp;')) {
+      fixedQuestion = this.activeQuestion.question.replace(/&amp;/g, '\&');
+    } else if (this.activeQuestion.question.includes('&quot;')) {
+      fixedQuestion = this.activeQuestion.question.replace(/&quot;/g, '\"');
+    } else if (this.activeQuestion.question.includes('&#039')) {
+      fixedQuestion = this.activeQuestion.question.replace(/&#039;/g, "\'");
+    } else {
+      fixedQuestion = this.activeQuestion.question;
+    }
+
+    this.activeQuestion.question = fixedQuestion;
     this.getAnswers(this.activeQuestion);
     this.removeQuestion(this.activeQuestion);
   }
