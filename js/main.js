@@ -24,7 +24,6 @@ class Game {
 
       DOMElements.questionCategoryModal.addEventListener('click', (e) => {
         if(e.target.className === 'question-category-1' || e.target.className === 'question-category-2') {
-          bids
           questions.getQuestion(e.target.textContent);
           questionsUI.renderQuestion(questions.activeQuestion, questions.activeQuestionAnswers)
           questionsUI.closeCategoryModal();
@@ -34,12 +33,11 @@ class Game {
       DOMElements.bidValueInputs.forEach(input => input.addEventListener('input', (e)=> {
         bids.setBid(DOMElements.bidValueInputs);
         DOMElements.money.textContent = bids.money;
-        console.log(bids)
       }))
   
       DOMElements.btnConfirmBid.addEventListener('click', () => {
         if(DOMElements.money.textContent === '0') {
-          bids.checkBid(questions.activeCorrectAnswer, [...DOMElements.bidValueInputs]);
+          bids.checkBid(questions.activeCorrectAnswer);
           if(this.gameTurn == 9) {
             bidsUI.renderMoney(bids.wonBid);
             resultsUI.renderQuestionResults(bids.loseBid, this.gameTurn);
@@ -50,6 +48,7 @@ class Game {
             return;
           }
           if(bids.wonBid) {
+            questionsUI.showCorrectAnswer(questions.activeCorrectAnswer);
             resultsUI.renderQuestionResults(bids.loseBid, this.gameTurn);
             resultsUI.showQuestionTurnResultMessage(bids.wonBid);
             bidsUI.renderMoney(bids.wonBid);

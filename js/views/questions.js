@@ -15,18 +15,25 @@ class QuestionsUI {
 
   renderQuestion(activeQuestion, answers) {
     DOMElements.questionDescription.textContent = activeQuestion.question;
-    DOMElements.questionAnswer1.textContent = answers[0];
-    DOMElements.questionAnswer2.textContent = answers[1];
-    DOMElements.questionAnswer3.textContent = answers[2];
-    DOMElements.questionAnswer4.textContent = answers[3];
+    DOMElements.questionAnswers.forEach((answer, index) => answer.textContent = answers[index]);
   }
 
   clearQuestionUI() {
     DOMElements.questionDescription.textContent = '';
-    DOMElements.questionAnswer1.textContent = '';
-    DOMElements.questionAnswer2.textContent = '';
-    DOMElements.questionAnswer3.textContent = '';
-    DOMElements.questionAnswer4.textContent = '';
+    DOMElements.questionAnswers.forEach(answer => answer.textContent = '');
+  }
+
+  showCorrectAnswer(correctAnswer) {
+    DOMElements.questionAnswers.forEach(answer => {
+      if(answer.textContent === correctAnswer) {
+        answer.classList.add('question-answer-correct');
+
+        setTimeout(()=>{
+          answer.classList.remove('question-answer-correct');
+        }, 2000)
+      }
+
+    });
   }
 }
 

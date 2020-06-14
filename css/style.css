@@ -198,6 +198,10 @@ body {
   border: 2px solid rgb(153, 153, 153);
 }
 
+.question-answer.question-answer-correct {
+  background: green;
+}
+
 /* Bid section */
 
 .bid-board {

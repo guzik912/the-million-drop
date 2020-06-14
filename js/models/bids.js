@@ -18,17 +18,16 @@ class Bids {
     this.bidValue4 = Number(bid[3].value)
     this.totalBidValues = [this.bidValue1, this.bidValue2, this.bidValue3, this.bidValue4]
     this.money = this.startMoney - (this.totalBidValues.reduce((a,b) => a + b))
-    let availableMaxBid = parseInt(DOMElements.money.textContent) - 25000;
-    // let availableMaxBid = this.money - (this.totalBidValues.reduce((a,b) => a + b));
-    // bid[0].setAttribute("max", this.money);
-    console.log(availableMaxBid)
+
+    bid.forEach((value, index) => {
+      let maxBid = this.money + this.totalBidValues[index];
+      value.setAttribute("max", maxBid)
+    })
   }
 
-  checkBid(correctAnswer, bids) { 
-    const answers = bids.map(bid => bid.parentNode.previousElementSibling.textContent);
-
-    answers.map((answer,index) => {
-      if(answer === correctAnswer) {
+  checkBid(correctAnswer) { 
+    DOMElements.questionAnswers.map((answer,index) => {
+      if(answer.textContent === correctAnswer) {
         this.wonBid = Number(this.totalBidValues[index])
         this.startMoney = this.wonBid
       } else {

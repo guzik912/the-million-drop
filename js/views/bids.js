@@ -8,11 +8,7 @@ class BidsUI {
   }
 
   clearBidUI() {
-    document.querySelector('.bid-value-1').value = 0;
-    document.querySelector('.bid-value-2').value = 0;
-    document.querySelector('.bid-value-3').value = 0;
-    document.querySelector('.bid-value-4').value = 0;
-
+    DOMElements.bidValueInputs.forEach(input => input.value = 0);
   }
 
   showErrorBidMessage() {

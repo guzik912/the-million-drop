@@ -9,7 +9,7 @@ class Questions {
   }
 
   fetchQuestions(){
-    fetch('https://opentdb.com/api.php?amount=20&type=multiple')
+    fetch('https://opentdb.com/api.php?amount=20&difficulty=easy&type=multiple')
     .then(res => res.json())
     .then(questions => this.allQuestions = questions.results)
     .catch(err => console.log(err))

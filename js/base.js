@@ -13,12 +13,13 @@ const DOMElements = {
     questionAnswer2: document.querySelector('.question-answer-2'),
     questionAnswer3: document.querySelector('.question-answer-3'),
     questionAnswer4: document.querySelector('.question-answer-4'),
+    questionAnswers: [...document.querySelectorAll('.question-answer')],
 
     bidValue1: document.querySelector('.bid-value-1'),
     bidValue1: document.querySelector('.bid-value-2'),
     bidValue1: document.querySelector('.bid-value-3'),
     bidValue1: document.querySelector('.bid-value-4'),
-    bidValueInputs: document.querySelectorAll('.bid-value input'),
+    bidValueInputs: [...document.querySelectorAll('.bid-value input')],
 
     money: document.querySelector('.money'),
     resultMessageMoney: document.querySelector('.result-message-money'),
