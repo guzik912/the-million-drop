@@ -27,7 +27,7 @@ class ResultsUI {
   showFinalResultMessage(wonMoney, playerName) {
     DOMElements.finalResultMessage.classList.add('final-result-message-active');
     DOMElements.finalMoney.textContent = numeral(wonMoney).format('0,0,0');
-    DOMElements.playerNameText.textContent = playerName;
+    DOMElements.playerNameText.textContent = playerName.charAt(0).toUpperCase() + playerName.slice(1);
   }
 }
 

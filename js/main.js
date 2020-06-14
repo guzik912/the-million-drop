@@ -57,7 +57,12 @@ class Game {
               this.renderTurn();
             }, 4000)
           } else {
-            resultsUI.showFinalResultMessage(bids.money, this.playerName.value);
+            // resultsUI.showFinalResultMessage(bids.money, this.playerName.value);
+            questionsUI.showCorrectAnswer(questions.activeCorrectAnswer);
+            resultsUI.showQuestionTurnResultMessage(bids.loseBid, bids.wonBid);
+            setTimeout(() => {
+              resultsUI.showFinalResultMessage(bids.wonBid, this.playerName.value);
+            }, 4000);
           }
 
         } else {

@@ -30,19 +30,7 @@ class Questions {
     this.activeQuestion = this.allQuestions.find(question => question.category === category);
     this.removedQuestions.push(this.activeQuestion);
 
-    let fixedQuestion = '';
-
-    if(this.activeQuestion.question.includes('&amp;')) {
-      fixedQuestion = this.activeQuestion.question.replace(/&amp;/g, '\&');
-    } else if (this.activeQuestion.question.includes('&quot;')) {
-      fixedQuestion = this.activeQuestion.question.replace(/&quot;/g, '\"');
-    } else if (this.activeQuestion.question.includes('&#039')) {
-      fixedQuestion = this.activeQuestion.question.replace(/&#039;/g, "\'");
-    } else {
-      fixedQuestion = this.activeQuestion.question;
-    }
-
-    this.activeQuestion.question = fixedQuestion;
+    this.clearQuestionsContentFromEntities(this.activeQuestion)
     this.getAnswers(this.activeQuestion);
     this.removeQuestion(this.activeQuestion);
   }
@@ -61,6 +49,48 @@ class Questions {
     const questionIndexToDelete = this.allQuestions.findIndex(question => question.question === question.question);
 
     this.allQuestions.splice(questionIndexToDelete, 1);
+  }
+
+  clearQuestionsContentFromEntities(question) {
+    let fixedQuestionDescription = '';
+    let fixedQuestionIncorrectAnswers = [];
+    let fixedQuestionCorrectAnswer = '';
+
+    if(question.question.includes('&amp;')) {
+      fixedQuestionDescription = question.question.replace(/&amp;/g, '\&');
+    } else if (question.question.includes('&quot;')) {
+      fixedQuestionDescription = question.question.replace(/&quot;/g, '\"');
+    } else if (question.question.includes('&#039')) {
+      fixedQuestionDescription = question.question.replace(/&#039;/g, "\'");
+    } else {
+      fixedQuestionDescription = question.question;
+    }
+    
+    question.incorrect_answers.map(answer => {
+      if(answer.includes('&amp;')) {
+        fixedQuestionIncorrectAnswers.push(answer.replace(/&amp;/g, '\&'));
+      } else if(answer.includes('&quot;')) {
+        fixedQuestionIncorrectAnswers.push(answer.replace(/&quot;/g, '\"'));
+      } else if(answer.includes('&#039')) {
+        fixedQuestionIncorrectAnswers.push(answer.replace(/&#039;/g, "\'"));
+      } else {
+        fixedQuestionIncorrectAnswers.push(answer)
+      }
+    })
+
+    if(question.correct_answer.includes('&amp;')) {
+      fixedQuestionCorrectAnswer = question.correct_answer.replace(/&amp;/g, '\&');
+    } else if(question.correct_answer.includes('&quot;')) {
+      fixedQuestionCorrectAnswer = question.correct_answer.replace(/&quot;/g, '\"');
+    } else if(question.correct_answer.includes('&quot;')) {
+      fixedQuestionCorrectAnswer = question.correct_answer.replace(/&#039;/g, "\'");
+    } else {
+      fixedQuestionCorrectAnswer = question.correct_answer;
+    }
+    
+    question.question = fixedQuestionDescription;
+    question.incorrect_answers = fixedQuestionIncorrectAnswers;
+    question.correct_answer = fixedQuestionCorrectAnswer;
   }
 
   calculateQuestionQue(){
