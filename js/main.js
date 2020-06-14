@@ -32,30 +32,30 @@ class Game {
       
       DOMElements.bidValueInputs.forEach(input => input.addEventListener('input', (e)=> {
         bids.setBid(DOMElements.bidValueInputs);
-        DOMElements.money.textContent = bids.money;
+        DOMElements.money.textContent = bids.convertedMoney;
       }))
   
       DOMElements.btnConfirmBid.addEventListener('click', () => {
-        if(DOMElements.money.textContent === '0') {
+        if(DOMElements.money.textContent === '0$') {
           bids.checkBid(questions.activeCorrectAnswer);
           if(this.gameTurn == 9) {
             bidsUI.renderMoney(bids.wonBid);
             resultsUI.renderQuestionResults(bids.loseBid, this.gameTurn);
-            resultsUI.showQuestionTurnResultMessage(bids.wonBid);
+            resultsUI.showQuestionTurnResultMessage(bids.loseBid, bids.wonBid);
             setTimeout(() => {
               resultsUI.showFinalResultMessage(bids.wonBid, this.playerName.value);
-            }, 1500);
+            }, 4000);
             return;
           }
           if(bids.wonBid) {
             questionsUI.showCorrectAnswer(questions.activeCorrectAnswer);
             resultsUI.renderQuestionResults(bids.loseBid, this.gameTurn);
-            resultsUI.showQuestionTurnResultMessage(bids.wonBid);
+            resultsUI.showQuestionTurnResultMessage(bids.loseBid, bids.wonBid);
             bidsUI.renderMoney(bids.wonBid);
             this.gameTurn++;
             setTimeout(() => {
               this.renderTurn();
-            }, 2000)
+            }, 4000)
           } else {
             resultsUI.showFinalResultMessage(bids.money, this.playerName.value);
           }

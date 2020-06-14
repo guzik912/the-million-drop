@@ -22,7 +22,8 @@ const DOMElements = {
     bidValueInputs: [...document.querySelectorAll('.bid-value input')],
 
     money: document.querySelector('.money'),
-    resultMessageMoney: document.querySelector('.result-message-money'),
+    resultMessageLostMoney: document.querySelector('.result-message-lost-money'),
+    resultMessageLeftMoney: document.querySelector('.result-message-left-money'),
     
     resultIcon: document.querySelectorAll('.result-icon'),
     resultMoney: document.querySelectorAll('.result-money'),

@@ -2,7 +2,7 @@ class ResultsUI {
   renderQuestionResults(bid, number) {
     DOMElements.resultIcon[number].textContent = '';
     DOMElements.resultIcon[number].innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>'
-    DOMElements.resultMoney[number].textContent = '- ' + bid.toString() + '$';
+    DOMElements.resultMoney[number].textContent = '- ' + numeral(bid).format('0,0,0') + '$';
   }
 
   clearResultsUI() {
@@ -14,18 +14,19 @@ class ResultsUI {
     DOMElements.resultMoney.forEach(element => element.textContent = '');
   }
 
-  showQuestionTurnResultMessage(wonMoney){
+  showQuestionTurnResultMessage(lostMoney, leftMoney){
     DOMElements.turnQuestionResultMessage.classList.add('turn-question-result-message-active');
-    DOMElements.resultMessageMoney.textContent = wonMoney;
+    DOMElements.resultMessageLostMoney.textContent = numeral(lostMoney).format('0,0,0') + '$';
+    DOMElements.resultMessageLeftMoney.textContent = numeral(leftMoney).format('0,0,0') + '$';
 
     setTimeout(() => {
       DOMElements.turnQuestionResultMessage.classList.remove('turn-question-result-message-active');
-    }, 2000)
+    }, 4000)
   }
 
   showFinalResultMessage(wonMoney, playerName) {
     DOMElements.finalResultMessage.classList.add('final-result-message-active');
-    DOMElements.finalMoney.textContent = wonMoney;
+    DOMElements.finalMoney.textContent = numeral(wonMoney).format('0,0,0');
     DOMElements.playerNameText.textContent = playerName;
   }
 }

@@ -1,10 +1,10 @@
 class BidsUI {
   constructor() {
-    DOMElements.money.textContent = '1000000';
+    DOMElements.money.textContent = numeral('1000000').format('0,0,0') + '$';
   }
 
   renderMoney(wonMoney) {
-    DOMElements.money.textContent = wonMoney;
+    DOMElements.money.textContent = numeral(wonMoney).format('0,0,0') + '$';
   }
 
   clearBidUI() {

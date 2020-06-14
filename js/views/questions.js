@@ -30,7 +30,7 @@ class QuestionsUI {
 
         setTimeout(()=>{
           answer.classList.remove('question-answer-correct');
-        }, 2000)
+        }, 4000)
       }
 
     });

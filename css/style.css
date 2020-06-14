@@ -21,6 +21,7 @@ body {
   padding: 2rem 0;
 }
 
+
 /* Welcome Board */
 .welcome-board {
   position: absolute;
@@ -82,6 +83,8 @@ body {
   border: none;
   color: var(--font-color-light);
   font-size: 1.8rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
 }
 
 .start-game-btn,
@@ -94,6 +97,7 @@ body {
   font-weight: bold;
   font-size: 1.2rem;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .start-game-again-btn {
@@ -114,9 +118,11 @@ body {
   height: 50%;
   padding: 5rem;
   background: var(--main-bg-color);
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
+  border-radius: 10px;
   text-align: center;
   z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
 }
 
 .question-category-modal.categoryModalOpen {
@@ -143,17 +149,12 @@ body {
   font-weight: bold;
   font-size: 1.2rem;
   text-align: center;
-  /* line-height: 100px; */
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.question-category-1 {}
-
-.question-category-2 {}
-
 
 /* Question board */
-
 .question-board {
   width: 80%;
   height: 25vh;
@@ -266,11 +267,15 @@ body {
   border-radius: 20px;
 }
 
+
 .bid-value input {
   width: 100%;
   padding: 1rem;
   background: rgba(28, 30, 33, 0.814);
   border: none;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
   color: var(--font-color-light);
   font-size: 1.4rem;
 }
@@ -280,9 +285,9 @@ body {
   width: 150px;
   margin: 1rem auto;
   padding: 1rem 2rem;
-  /* background: var(--main-bg-color); */
   color: var(--font-color-dark);
   border: none;
+  border-radius: 5px;
   font-weight: bold;
   font-size: 1.2rem;
   cursor: pointer;
@@ -312,10 +317,6 @@ body {
   width: 2rem;
   height: 2rem;
   font-size: 2rem;
-}
-
-.result-icon-wrong {
-  /* color: red; */
 }
 
 .result-icon-good {
@@ -355,19 +356,15 @@ body {
   background: rgb(167, 167, 167);
   border-radius: 20px;
   color: var(--font-color-dark);
-  font-size: 1.4rem;
+  font-size: 2rem;
+  font-weight: bold;
   z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
 }
 
 .turn-question-result-message-active {
   display: block;
 }
-
-.result-messagemoney {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
 
 .final-result-message {
   display: none;
@@ -393,4 +390,12 @@ body {
 .final-money {
   font-weight: bold;
   color: var(--font-color-light);
+}
+
+.color-red {
+  color: red;
+}
+
+.color-green {
+  color: green;
 }

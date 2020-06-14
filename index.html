@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,8 @@
     <h3>You have to bid your all available money...</h3>
   </div>
   <div class="turn-question-result-message">
-    <h3>Well done! Let's going next question! You still have <span class="result-message-money"></span> in game!</h3>
+    <p>Lost money in this turn: <span class="result-message-lost-money color-red"></span></p>
+    <p>Money left: <span class="result-message-left-money color-green"></span></h3>
   </div>
   <div class="final-result-message">
     <div class="final-result-message-content">
@@ -146,7 +148,6 @@
     </div>
   </div>
 </body>
-
 
 <script src="js/base.js"></script>
 <script src="js/models/questions.js"></script>

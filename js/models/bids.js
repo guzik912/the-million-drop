@@ -2,6 +2,7 @@ class Bids {
   constructor() {
     this.startMoney = 1000000;
     this.money = 0;
+    this.convertedMoney = 0;
     this.wonBid = 0;
     this.loseBid = 0;
     this.bidValue1 = 0;
@@ -18,6 +19,7 @@ class Bids {
     this.bidValue4 = Number(bid[3].value)
     this.totalBidValues = [this.bidValue1, this.bidValue2, this.bidValue3, this.bidValue4]
     this.money = this.startMoney - (this.totalBidValues.reduce((a,b) => a + b))
+    this.convertedMoney = numeral(this.startMoney - (this.totalBidValues.reduce((a,b) => a + b))).format('0,0,0') + '$';
 
     bid.forEach((value, index) => {
       let maxBid = this.money + this.totalBidValues[index];
