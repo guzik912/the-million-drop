@@ -1,9 +1,9 @@
 :root {
   --main-bg-color: rgb(44, 53, 66);
-  --secondary-bg-color: #FCFCFB;
-  --tertiary-bg-color: #B93633;
-  --font-color-dark: #1C1E21;
-  --font-color-light: #FCFCFB;
+  --secondary-bg-color: #fcfcfb;
+  --tertiary-bg-color: #b93633;
+  --font-color-dark: #1c1e21;
+  --font-color-light: #fcfcfb;
 }
 
 *,
@@ -14,6 +14,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   background: var(--main-bg-color);
   color: var(--font-color-light);
@@ -21,14 +25,13 @@ body {
   padding: 2rem 0;
 }
 
-
 /* Welcome Board */
 .welcome-board {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   background: var(--main-bg-color);
   z-index: 10;
 }
@@ -39,6 +42,7 @@ body {
 
 .welcome-content {
   height: 100%;
+  width: 100%;
   padding: 5rem 5rem 5rem 20rem;
 }
 
@@ -68,12 +72,13 @@ body {
   margin: 1rem 0;
   font-size: 1.8rem;
   color: var(--font-color-light);
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .player-info {
   margin-top: 10rem;
   display: flex;
+  align-items: center;
 }
 
 .player-name {
@@ -84,7 +89,7 @@ body {
   color: var(--font-color-light);
   font-size: 1.8rem;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .start-game-btn,
@@ -105,7 +110,6 @@ body {
   width: 200px;
 }
 
-
 /* Questions category */
 
 .question-category-modal {
@@ -122,7 +126,7 @@ body {
   border-radius: 10px;
   text-align: center;
   z-index: 10;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .question-category-modal.categoryModalOpen {
@@ -152,7 +156,6 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
-
 
 /* Question board */
 .question-board {
@@ -224,7 +227,6 @@ body {
   z-index: -1;
 }
 
-
 .bid-content {
   height: 70%;
   display: flex;
@@ -242,7 +244,7 @@ body {
   font-weight: bold;
   font-size: 2.5rem;
   text-align: center;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 }
 
 .bid-1,
@@ -259,14 +261,12 @@ body {
   margin-top: 5rem;
 }
 
-
 .bid-value {
   margin: 1rem;
   padding: 2rem;
   background: rgb(211, 211, 211);
   border-radius: 20px;
 }
-
 
 .bid-value input {
   width: 100%;
@@ -275,7 +275,7 @@ body {
   border: none;
   outline: none;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   color: var(--font-color-light);
   font-size: 1.4rem;
 }
@@ -313,7 +313,7 @@ body {
 
 .result-icon {
   display: inline-block;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   width: 2rem;
   height: 2rem;
   font-size: 2rem;
@@ -326,7 +326,6 @@ body {
 .result-money {
   font-size: 1.6rem;
 }
-
 
 .error-bid-message {
   display: none;
@@ -359,7 +358,7 @@ body {
   font-size: 2rem;
   font-weight: bold;
   z-index: 10;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .turn-question-result-message-active {
@@ -368,12 +367,12 @@ body {
 
 .final-result-message {
   display: none;
+  height: 100%;
+  width: 100%;
   padding: 5rem;
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
   background: var(--main-bg-color);
   text-align: center;
   z-index: 10;

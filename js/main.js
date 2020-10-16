@@ -57,7 +57,6 @@ class Game {
               this.renderTurn();
             }, 4000)
           } else {
-            // resultsUI.showFinalResultMessage(bids.money, this.playerName.value);
             questionsUI.showCorrectAnswer(questions.activeCorrectAnswer);
             resultsUI.showQuestionTurnResultMessage(bids.loseBid, bids.wonBid);
             setTimeout(() => {
